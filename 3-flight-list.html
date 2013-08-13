@@ -1,0 +1,28 @@
+<div class="main-content">
+    <div class="row">
+        <div class="span9">
+            <h2>Flight List</h2>
+        </div>
+    </div>
+    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <table>
+        <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Desctiption</th>
+            <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="flight in flights | filter:search | orderBy:'from'">
+            <td><a href="{{flight.from}}" target="_blank">{{flight.from}}</a></td>
+            <td>{{flight.to}}</td>
+            <td>{{flight.description}}</td>
+            <td>
+                <a href="#/edit/{{project.$id}}"><i class="icon-pencil"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

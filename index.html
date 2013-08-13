@@ -2,14 +2,18 @@
 <html ng-app="project">
 <head>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js">
     </script>
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
     <script src="http://firebase.github.io/angularFire/angularFire.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="project.js"></script>
+    <script src="flight.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
         window.onload = function () {
@@ -24,70 +28,57 @@
             });
         }
     </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap-datepicker.js" charset="UTF-8"></script>
+
 </head>
 <body>
 
 <div class="container">
     <div class="row">
-        <div class="span12">Header</div>
+        <div class="span12">
+            <div class="span3 offset9">
+                <div id="header">
+                    <ul class="inline">
+                        <li>16.Aug.2013</li>
+                        <li><i class="icon-wrench"></i></li>
+                        <li><i class="icon-user"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <div class="span3">Navigation</div>
+
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-tabs nav-stacked">
+                <li><a href="#/"><i class="icon-chevron-right"></i> Home</a></li>
+                <li><a href="#/flightList"><i class="icon-chevron-right"></i> Airplane</a></li>
+                <li><a href="#airport"><i class="icon-chevron-right"></i> Airport</a></li>
+                <li><a href="#/new"><i class="icon-chevron-right"></i> Flight</a></li>
+                <li><a href="#customer"><i class="icon-chevron-right"></i> Customer</a></li>
+                <li><a href="#pament"><i class="icon-chevron-right"></i> Payment</a></li>
+                <li><a href="#check"><i class="icon-chevron-right"></i> Check</a></li>
+                <li><a href="#report"><i class="icon-chevron-right"></i> Report</a></li>
+            </ul>
+        </div>
+
+
         <div class="span9">
-            <div class="row">
-                <div class="span5">
-                    Date bn
-                </div>
-                <div class="span4">
-                    <button class="btn btn-primary" ng-click="flightSearch()">Flight Search</button>
-                     <button class="btn btn-primary" ng-click="flightSearch()">Ticket Reservation</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span8">
-                    Flight Search
-                </div>
-                <div class="span1">
-                    <i  class="icon-plane"></i>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span9">
-                    <hr>
-                </div>
-            </div>
-            content
+            <div ng-view></div>
         </div>
     </div>
 </div>
 
-<br><br><br><br><br><br><br>
 
-<div class="container">
-    <div class="hero-unit">
-        <h1>Live-teminal</h1>
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'mm-dd-yyyy'
+    });
+    $('.segmented-control').button('toggle')
 
-        <div ng-view></div>
-
-        <p><a class="btn  btn-danger  btn-large" href="#">Gro&szlig;er Call to Action Button &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="span5">
-            <h2>Box 1</h2>
-
-            <p>Inhalt der 1. Box &uuml;ber 2 Spalten</p>
-
-            <p><a class="btn  btn-primary" href="#">Blauer Button &raquo;</a></p>
-        </div>
-        <div class="span5">
-            <h2>Box 2</h2>
-
-            <p>Inhalt der 2. Box &uuml;ber 10 Spalten. Alles einfach per zugewiesener CSS-Klasse m&ouml;glich.</p>
-
-            <p><a class="btn  btn-success" href="#">GrÃ¼ner Button &raquo;</a></p>
-        </div>
-    </div>
-</div>
+</script>
 </body>
 </html>

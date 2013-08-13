@@ -1,0 +1,30 @@
+#header ul li {
+    border-right: 1px solid;
+}
+
+#header ul li:last-child {
+    border-right: 0px solid;
+}
+
+#header {
+    padding: 20px 0px 20px 0px;
+}
+
+#nav ul li {
+    list-style: none;
+    line-height: 30px;
+    background-color: #;
+}
+#nav ul li:hover {
+
+}
+#bla{
+    visibility: hidden;
+}
+
+.main-content {
+    background-color: #eeeeee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
