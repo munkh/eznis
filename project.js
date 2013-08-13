@@ -1,5 +1,6 @@
 angular.module('project', ['firebase']).
-    value('fbURL', 'https://angularjs-projects.firebaseio.com/').
+
+    value('fbURL', 'https://eznis.firebaseio.com/').
     factory('Projects', function(angularFireCollection, fbURL) {
         return angularFireCollection(fbURL);
     }).

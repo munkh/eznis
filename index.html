@@ -1,15 +1,93 @@
 <!doctype html>
 <html ng-app="project">
 <head>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js">
     </script>
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
     <script src="http://firebase.github.io/angularFire/angularFire.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="project.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var socket = io.connect();
+
+            socket.on('reload', function () {
+                window.location.reload();
+            });
+
+            socket.on('stylesheet', function (sheet) {
+                window.location.reload();
+            });
+        }
+    </script>
 </head>
 <body>
-<h2>JavaScript Projects</h2>
-<div ng-view></div>
+
+<div class="container">
+    <div class="row">
+        <div class="span12">Header</div>
+    </div>
+    <div class="row">
+        <div class="span3">Navigation</div>
+        <div class="span9">
+            <div class="row">
+                <div class="span5">
+                    Date bn
+                </div>
+                <div class="span4">
+                    <button class="btn btn-primary" ng-click="flightSearch()">Flight Search</button>
+                     <button class="btn btn-primary" ng-click="flightSearch()">Ticket Reservation</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span8">
+                    Flight Search
+                </div>
+                <div class="span1">
+                    <i  class="icon-plane"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span9">
+                    <hr>
+                </div>
+            </div>
+            content
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="hero-unit">
+        <h1>Live-teminal</h1>
+
+        <div ng-view></div>
+
+        <p><a class="btn  btn-danger  btn-large" href="#">Gro&szlig;er Call to Action Button &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="span5">
+            <h2>Box 1</h2>
+
+            <p>Inhalt der 1. Box &uuml;ber 2 Spalten</p>
+
+            <p><a class="btn  btn-primary" href="#">Blauer Button &raquo;</a></p>
+        </div>
+        <div class="span5">
+            <h2>Box 2</h2>
+
+            <p>Inhalt der 2. Box &uuml;ber 10 Spalten. Alles einfach per zugewiesener CSS-Klasse m&ouml;glich.</p>
+
+            <p><a class="btn  btn-success" href="#">GrÃ¼ner Button &raquo;</a></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
